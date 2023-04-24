@@ -1,7 +1,7 @@
 services:
   db:
     container_name: postgres
-    image: postgres:15.1
+    image: postgres:15.2
     environment:
       POSTGRES_USER: amigoscode
       POSTGRES_PASSWORD: password
@@ -16,11 +16,11 @@ services:
 
   amigoscode-api:
     container_name: amigoscode-api
-    image: amigoscode/amigoscode-api
+    image: armine27/amigoscode-api
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
     ports:
-      - "8088:8080"
+      - "8080:8080"
     networks:
       - postgres
     depends_on:
