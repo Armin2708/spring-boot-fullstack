@@ -16,7 +16,7 @@ services:
 
   amigoscode-api:
     container_name: amigoscode-api
-    image: amigoscode/amigoscode-api
+    image: armine27/amigoscode-api
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
     ports:
