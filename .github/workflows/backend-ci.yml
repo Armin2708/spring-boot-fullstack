@@ -40,3 +40,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+      - name: Build and run Unit/Integration Tests with Maven
+        run: mvn -ntp -B verify
