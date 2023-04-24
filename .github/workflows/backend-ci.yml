@@ -34,5 +34,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
+      - uses: actions/docker/login@master
+        with: # Set the secret as an input
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        env: # Set the secret in the env
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and run Unit/Integration Tests with Maven
         run: mvn -ntp -B verify
