@@ -42,7 +42,7 @@ jobs:
         run: >
           curl -X POST -H 'Content-type: application/json'
           --data '{"text":"Deployment started :progress_bar: :fingerscrossed:"}' 
-                ${{ secrets.SLACK_WEBHOOK_URL }}
+          ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - uses: actions/setup-java@v3
         with:
@@ -61,7 +61,7 @@ jobs:
         run: >
           curl -X POST -H 'Content-type: application/json'
           --data '{"text":":maven: Building with Maven"}' 
-                 ${{ secrets.SLACK_WEBHOOK_URL }}
+          ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Build Package Push with Maven
         run: mvn -ntp -B verify -Ddocker.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}} jib:build
