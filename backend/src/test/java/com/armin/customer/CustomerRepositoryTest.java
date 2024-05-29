@@ -1,7 +1,6 @@
 package com.armin.customer;
+
 import com.armin.AbstractTestContainer;
-import com.armin.customer.Customer;
-import com.armin.customer.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,13 +97,5 @@ class CustomerRepositoryTest extends AbstractTestContainer {
 
         // Then
         assertThat(actual).isFalse();
-    }
-
-    @Test
-    void testExistsCustomerByEmail() {
-    }
-
-    @Test
-    void testExistsCustomerById() {
     }
 }

@@ -8,8 +8,10 @@ import {
     Text,
     Stack,
     Tag,
-    useColorModeValue,
+    useColorModeValue, Button,
 } from '@chakra-ui/react';
+import UpdateCustomerDrawerForm from "./UpdateCustomerDrawerForm.jsx";
+import DeleteCustomerDrawerPopUp from "./DeleteCustomerDrawerPopUp.jsx";
 
 export default function CardWithImage({id, name, email, age, gender, imageNumber}) {
     const randomUserGender = gender ==="MALE"  ? "men" : "women";
@@ -51,6 +53,16 @@ export default function CardWithImage({id, name, email, age, gender, imageNumber
                         </Heading>
                         <Text color={'gray.500'}>{email}</Text>
                         <Text color={'gray.500'}>Age {age}</Text>
+                        <UpdateCustomerDrawerForm
+                            customerId={id}
+                            customerName={name}
+                            customerAge={age}
+                            customerGender={gender}
+                        />
+                        <DeleteCustomerDrawerPopUp
+                            customerId={id}
+                            customerName={name}
+                        />
                     </Stack>
                 </Box>
             </Box>
